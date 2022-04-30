@@ -9,7 +9,7 @@ function App() {
   const [style, setStyle] =useState('rgb(255, 255, 255)')
   const [error, setError] = useState('')
   const [lenguage, setLenguage] = useState('es')
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8de449a2c230db8499e14a6886b256cf&lang=${lenguage}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${yourKey}&lang=${lenguage}`;
 
   const  searchLocation = (event) =>{
        if(event.key === 'Enter'){
