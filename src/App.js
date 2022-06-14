@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
   const [style, setStyle] =useState('rgb(255, 255, 255)')
   const [error, setError] = useState('')
   const [lenguage, setLenguage] = useState('es')
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8cea7bef3aaa8af40db90df1267081a0&lang=${lenguage}`;
+  const apiKey = process.env.REACT_APP_API_KEY
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}&lang=${lenguage}`;
 
   const  searchLocation = (event) =>{
        if(event.key === 'Enter'){
