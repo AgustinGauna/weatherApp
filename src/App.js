@@ -9,7 +9,7 @@ function App() {
   const [style, setStyle] =useState('rgb(255, 255, 255)')
   const [error, setError] = useState('')
   const [lenguage, setLenguage] = useState('es')
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8de449a2c230db8499e14a6886b256cf&lang=${lenguage}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8cea7bef3aaa8af40db90df1267081a0&lang=${lenguage}`;
 
   const  searchLocation = (event) =>{
        if(event.key === 'Enter'){
@@ -97,7 +97,7 @@ function App() {
       backgroundSize: 'cover',
       color: `${style}`
      }}>
-        <button className='boton' onClick={()=>{changeLenguage()}}>{lenguage === 'es' ? 'Change to English' : 'Cambiar a Español'}</button>
+        <button className='boton' onClick={()=>{changeLenguage()}}>{lenguage === 'es' ? 'English' : 'Español'}</button>
       <div className="search">
         <input value={location} autoFocus placeholder={lenguage === 'es' ? 'Ingrese una ciudad' : 'Enter a location'} onChange={event => setLocation(event.target.value)} onKeyPress={searchLocation} type="text" />
       </div>
@@ -117,7 +117,7 @@ function App() {
         <div className="bottom">
           <div className="feels">
             {data.main ? <p className='bold'> {data.main.feels_like.toFixed()}° </p> : ""}
-            <p> {lenguage === 'es' ? 'Sensacion termica' : 'Feels like'} </p>
+            <p> {lenguage === 'es' ? 'Sensacion' : 'Feels like'} </p>
           </div>
           <div className="humidity">
            {data.main ?  <p className='bold'>{data.main.humidity}%</p> : ""}
