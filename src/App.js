@@ -114,7 +114,7 @@ function App() {
               {data.main ? <h1> {data.main.temp.toFixed()}°</h1> : ""}
           </div>
           <div className="description">
-            {data.weather ? <p>{data.weather[0].description}</p> : ""}
+            {data.weather ? <p>{data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}</p> : ""}
           </div>
         </div>
         <div className="bottom">
